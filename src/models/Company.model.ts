@@ -1,4 +1,5 @@
-import {Table, Model , Column , DataType} from "sequelize-typescript"
+import {Table, Model , Column , DataType, HasMany} from "sequelize-typescript"
+import Product from "./Product.model"
 
 @Table({
     tableName: "companies", // Nombre de la tabla en la base de datos
@@ -54,6 +55,10 @@ class Company extends Model{
     })
 
     declare passwordCompany : string
+
+    @HasMany(() => Product )
+
+    declare products: Product[]
 
 }
 
