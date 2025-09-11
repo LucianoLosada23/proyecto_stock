@@ -8,10 +8,54 @@ import {Table, Model , Column , DataType} from "sequelize-typescript"
 class Company extends Model{
     
     @Column({
-        type : DataType.STRING(100)
+        type : DataType.STRING(100),
+        allowNull:false
     })
 
-    declare name : string
+    declare nameCompany : string
+    
+    @Column({
+        type: DataType.STRING(100),
+        unique:true,
+        allowNull:false
+
+    })
+
+    declare cuitCompany : string
+    
+    @Column({
+        type: DataType.STRING(100),
+        allowNull:false
+
+    })
+    
+    declare addressCompany : string
+    
+    @Column({
+        type: DataType.STRING(100),
+        allowNull:false
+    
+    })
+    
+    declare phoneCompany : string
+
+    @Column({
+        type:DataType.STRING(100),
+        allowNull:false,
+        unique:true
+    })
+
+    declare emailCompany : string
+
+    @Column({
+        type:DataType.STRING(100),
+        allowNull:false,
+        unique:true
+    })
+
+    declare passwordCompany : string
+
 }
 
 export default Company
+

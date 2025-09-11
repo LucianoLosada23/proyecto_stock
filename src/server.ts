@@ -6,7 +6,7 @@ import colors  from "colors"
 export async function connectDB() {
     try {
         await db.authenticate() //db.authenticate() es un método de Sequelize que intenta verificar la conexión con la base de datos.
-        db.sync() // es otro método de Sequelize que sincroniza tus modelos con la base de datos. Esto significa que crea las tablas si no existen.
+        db.sync({alter: true}) // es otro método de Sequelize que sincroniza tus modelos con la base de datos. Esto significa que crea las tablas si no existen.
         console.log(colors.blue.bold("Conexión exitosa a la base de datos"))
     } catch (error) {
         console.log(error)
