@@ -1,5 +1,6 @@
 import {Table, Model , Column , DataType, AllowNull, ForeignKey, BelongsTo} from "sequelize-typescript"
 import Company from "./Company.model";
+import Category from "./Category.model";
 
 @Table({
     tableName:"products", //Nombre de la tabla en la base de datos
@@ -65,6 +66,17 @@ class Product extends Model{
 
     @BelongsTo(() => Company) // Relacion muchos a uno con Company
     declare company: Company;
+
+    // FK a Category
+    @ForeignKey(() => Category)
+    @Column({
+        type: DataType.INTEGER,
+        allowNull: false
+    })
+    declare categoryId: number;
+
+    @BelongsTo(() => Category) // Relacion muchos a uno con Category
+    declare category: Category;
 
     
 }
