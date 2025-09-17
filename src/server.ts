@@ -2,7 +2,7 @@ import express from "express"
 import db from "./config/db"
 import colors  from "colors"
 import companyRoutes  from "./routes/companyRoutes"
-
+import categoryRoutes from "./routes/categoryRoutes"
 //Conectar a la Base de Datos
 export async function connectDB() {
     try {
@@ -24,6 +24,8 @@ const app = express()
 app.use(express.json())
 
 // Rutas de Company
-app.use("/api/company" , companyRoutes )
+app.use("/api/company" , companyRoutes)
 
+// Rutas de Category
+app.use("/api/category", categoryRoutes )
 export default app   
