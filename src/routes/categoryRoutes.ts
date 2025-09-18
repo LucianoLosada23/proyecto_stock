@@ -6,12 +6,13 @@ const router = Router()
 
 // GET  
 router.get("/" ,  
-    handleInputErrors,
     CategoryController.getCategories
 )
 
+// POST
 router.post("/" , 
     handleInputErrors,
+    CategoryController.createCategory
 )
 
 export default router

@@ -10,4 +10,14 @@ export class CategoryService {
             throw error;
         }
     }
+
+    // Crear una nueva categoría
+    static async createCategory(data){
+        try {
+            const category = await Category.create(data)
+            return category
+        } catch (error) {
+            throw error
+        }
+    }
 }
