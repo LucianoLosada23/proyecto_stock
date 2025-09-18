@@ -1,7 +1,7 @@
 import server from "./server"
 import colors from "colors"
 
-// variable de entorno oara el puerto o sino hay default 4000
+// variable de entorno para el puerto o sino hay default 4000
 const port = process.env.PORT || 4000 
 
 // servidor escuchando en el puerto

@@ -3,6 +3,7 @@ import db from "./config/db"
 import colors  from "colors"
 import companyRoutes  from "./routes/companyRoutes"
 import categoryRoutes from "./routes/categoryRoutes"
+import productRoutes from "./routes/productRoutes"
 //Conectar a la Base de Datos
 export async function connectDB() {
     try {
@@ -28,4 +29,8 @@ app.use("/api/company" , companyRoutes)
 
 // Rutas de Category
 app.use("/api/category", categoryRoutes )
+
+// Rutas de Product
+app.use("/api/product", productRoutes )
+
 export default app   
