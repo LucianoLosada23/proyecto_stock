@@ -28,4 +28,19 @@ export class CategoryController {
       console.log(error);
     }
   }
+
+  //DELETE -> Eliminar una categoria 
+  static async deleteCategory(req: Request, res: Response) {
+    try {
+      const { id } = req.params
+      const category = await CategoryService.deleteCategory(id);
+      return res.status(200).json({
+        message: "Categoria eliminada con exito",
+        data: category,
+      });
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
 }

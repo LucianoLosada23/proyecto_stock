@@ -15,4 +15,10 @@ router.post("/" ,
     CategoryController.createCategory
 )
 
+//DELETE
+router.delete("/:id",
+    handleInputErrors,
+    CategoryController.deleteCategory
+)
+
 export default router
