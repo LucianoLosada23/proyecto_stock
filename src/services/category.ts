@@ -20,4 +20,15 @@ export class CategoryService {
             throw error
         }
     }
+
+    // Eliminar una compañía por ID
+      static async deleteCategory(id) {
+        try {
+          const category = await Category.findByPk(id);
+          await category.destroy();
+          return category;
+        } catch (error) {
+          throw error;
+        }
+      }
 }
