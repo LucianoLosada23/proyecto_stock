@@ -37,5 +37,18 @@ export class CompanyController {
     //PUT
 
     //DELETE
+    static async deleteCompany(req : Request , res : Response){
+        try {
+            const {id} = req.params
+            const Company = await CompanyService.deleteCompany(id);            
+            return res.status(201).json({
+                message: "Empresa eliminada con éxito",
+                data: Company,
+            });
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 }

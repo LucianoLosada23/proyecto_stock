@@ -21,4 +21,15 @@ export class CompanyService {
       throw error;
     }
   }
+
+  // Eliminar una compañía por ID
+  static async deleteCompany(id) {
+    try {
+      const company = await Company.findByPk(id);
+      await company.destroy();
+      return company;
+    } catch (error) {
+      throw error;
+    }
+  }
 }

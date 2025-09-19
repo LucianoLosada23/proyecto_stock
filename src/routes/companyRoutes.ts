@@ -16,5 +16,9 @@ router.post("/" ,
     CompanyController.createCompany
 )
 
+// DELETE
+router.delete("/:id" ,
+    CompanyController.deleteCompany
+)
 
 export default router
