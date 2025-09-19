@@ -18,6 +18,7 @@ router.post("/" ,
 
 // DELETE
 router.delete("/:id" ,
+    handleInputErrors,
     CompanyController.deleteCompany
 )
 
