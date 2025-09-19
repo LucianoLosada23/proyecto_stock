@@ -16,4 +16,10 @@ router.post("/" ,
 
 )
 
+// DELETE
+router.delete("/:id" ,
+    handleInputErrors,
+    ProductController.deleteProduct
+)
+
 export default router
